@@ -1,0 +1,18 @@
+server:
+  port: 8080
+#spring:
+#  cache:
+#    ehcache:
+#      config: ehcache.xml
+aopcache:
+  redis:
+    enabled:false
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: chenchao
+mybatis:
+  type-aliases-package: com.example.beijing.domain
+  mapper-locations: classpath:mapper/*.xml

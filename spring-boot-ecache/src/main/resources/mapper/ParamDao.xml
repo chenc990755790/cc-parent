@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.beijing.dao.ParamDao">
+
+    <resultMap id="paramMap" type="com.example.beijing.domain.Param">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="param_key" property="paramKey" jdbcType="VARCHAR"/>
+        <result column="param_cn" property="paramCn" jdbcType="VARCHAR"/>
+        <result column="item_id" property="itemId" jdbcType="INTEGER"/>
+        <result column="item_value" property="itemValue" jdbcType="VARCHAR"/>
+        <result column="seq_order" property="seqOrder" jdbcType="INTEGER"/>
+    </resultMap>
+    <!-- 可根据自己的需求，是否要使用 -->
+    <select id="getParamByParamKey" resultMap="paramMap">
+        select id,param_key,param_cn,item_id,item_value,seq_order
+        from param order by seq_order
+    </select>
+
+</mapper>
